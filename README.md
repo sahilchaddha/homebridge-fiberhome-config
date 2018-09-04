@@ -6,9 +6,10 @@ Due to lack of DHCP Reservation / Static IP Reservation & enforced AP Isolation 
 
 This Plugin tends to fetch newly assigned IP Address from FiberHome Router and updates homebridge configuration to point devices to their correct IP addresses. It uses MAC Address of the device to map HomeKit devices to IP.
 
-![Router Top](https://github.com/sahilchaddha/homebridge-fiberhome-config/raw/master/img/router-top.png "Router Top")
-
-![Router Bottom](https://github.com/sahilchaddha/homebridge-fiberhome-config/raw/master/img/router-bottom.png "Router Bottom")
+<p float="left">
+  <img src="https://github.com/sahilchaddha/homebridge-fiberhome-config/raw/master/img/router-top.png" width="400" /> 
+  <img src="https://github.com/sahilchaddha/homebridge-fiberhome-config/raw/master/img/router-bottom.jpg" width="400" />
+</p>
 
 ## Installation : 
 
