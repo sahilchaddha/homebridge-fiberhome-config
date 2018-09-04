@@ -19,6 +19,9 @@ This Plugin tends to fetch newly assigned IP Address from FiberHome Router and u
 
 ## Usage :
 
+This Plugin creates a switch in HomeKit which is accessible from Home App. You can toggle it and set it on repeat to toggle the switch every x minutes.
+When Toggled, the switch will fetch all the clients mentioned in `config.json` e.g. `"_Sahil_iPhone": "xx:xx:xx:xx:xx:xx"` and will update config.json for homebridge wherever the variable `FB_Sahil_iPhone` (FB + {VAR_NAME}) is assigned and needs to be constantly updated. The config.json needs to be copied to `$HOMEBRIDGE_HOME/config-fiberhome.json` for backup purposes.
+
 ## Sample Config : 
 
 ```json
