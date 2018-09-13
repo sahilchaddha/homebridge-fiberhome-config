@@ -32,6 +32,7 @@ class FiberHome extends Accessory {
     this.routerGateway = config.routerGateway || '192.168.1.1'
     this.macs = config.macs || {}
     this.router = new RouterMapper('http://' + this.routerGateway)
+    this.config = config
     this.paths = {
       config: homebridge.User.configPath(),
       cachedAddress: path.join(homebridge.User.storagePath(), cachedAddressFileName),
@@ -74,6 +75,10 @@ class FiberHome extends Accessory {
       })
       .then((newAddress) => {
         // Get Cached Address
+        if (self.config.disableCache === true) {
+          return newAddress
+        }
+
         return self.getCachedAddress()
           .then((cachedAddress) => {
             var updatedAddress = cachedAddress
@@ -108,6 +113,10 @@ class FiberHome extends Accessory {
           .then((config) => {
             var modifiedConfig = config
             keys.forEach((item) => {
+              if (!newConfig[item]) {
+                modifiedConfig = modifiedConfig.replace(new RegExp('FB' + item, 'g'), '192.168.1.254')
+                return
+              }
               modifiedConfig = modifiedConfig.replace(new RegExp('FB' + item, 'g'), newConfig[item])
             })
             return modifiedConfig

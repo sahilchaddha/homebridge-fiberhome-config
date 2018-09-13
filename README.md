@@ -61,3 +61,5 @@ When Toggled, the switch will fetch all the clients mentioned in `config.json` e
     ]
 }
 ```
+
+Set `disableCache` as true to update Unavailable devices to `Device Host Unreachable`
